@@ -7,6 +7,7 @@ const cors = require("cors");
 require("dotenv").config();
 const authentication = require('./Routes/authentication')
 const userRoute = require('./Routes/userRoute')
+const adminRoute = require('./Routes/adminRoutes')
 
 // middleware
 app.use(cors());
@@ -29,6 +30,7 @@ mongoose
 
 app.use("/auth", authentication)
 app.use("/user", userRoute)
+app.use("/admin", adminRoute)
 
 // testing
 app.get("/", (req, res) => {
